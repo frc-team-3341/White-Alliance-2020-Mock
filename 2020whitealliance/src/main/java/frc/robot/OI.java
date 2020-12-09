@@ -47,10 +47,12 @@ public class OI {
 
   private static Joystick xbox;
   public static Drivetrain m_drive;
+  public static shooterSubsystem m_shooter;
 
   public OI() {
     m_drive = Drivetrain.getInstance();
     xbox = new Joystick(RobotMap.xboxPort);
+    m_shooter = shooterSubsystem.getInstance();
   }
 
   public static Joystick returnXbox() {
