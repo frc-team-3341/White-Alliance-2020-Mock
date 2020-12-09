@@ -27,6 +27,7 @@ public class RobotMap {
   //motor configurations
   public static int leftDrive = 1;
   public static int rightDrive = 0;
+  public static int intake = 3;
 
   //Joystick buttons/axes
   public static int xboxPort = 0;
