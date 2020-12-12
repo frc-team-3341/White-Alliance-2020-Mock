@@ -19,6 +19,8 @@ public class Intake extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
+  private int intakeToggle = 0;
+
   private PWMTalonSRX intakeMotor = new PWMTalonSRX(RobotMap.intake);
   public static Intake intake;
 
@@ -31,14 +33,20 @@ public class Intake extends Subsystem {
 
   public void acquire(double speed) {
     //start time
-    long startTime = System.currentTimeMillis();
+    //long startTime = System.currentTimeMillis();
     
     //how long it takes to intake one ball at set speed (0.3)
-    while(System.currentTimeMillis() - startTime < 200){
+    //while(System.currentTimeMillis() - startTime < 200){
+    //  intakeMotor.set(speed);
+    //}
+    
+    if(intakeToggle == 0){
       intakeMotor.set(speed);
+      intakeToggle = 1;
+    } else if(intakeToggle == 1){
+      intakeMotor.set(0);
+      intakeToggle = 0;
     }
-
-    intakeMotor.set(0);
   }
 
   @Override
