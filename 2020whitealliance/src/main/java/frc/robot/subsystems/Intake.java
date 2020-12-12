@@ -31,7 +31,7 @@ public class Intake extends Subsystem {
     return intake;
   }
 
-  public void acquire(double speed) {
+  public void acquireToggle(double speed) {
     //start time
     //long startTime = System.currentTimeMillis();
     
@@ -58,7 +58,7 @@ public class Intake extends Subsystem {
   @Override
   public void periodic() {
       if (OI.returnXbox().getRawButton(RobotMap.aButton)){
-        acquire(0.3); 
+        acquireToggle(0.3); 
       } 
   }
 }
